@@ -39,6 +39,9 @@
 >
   <div class="meta top">
     <span>{AUTHOR ? `${AUTHOR} · ` : ''}{YEAR}</span>
+    <a class="qr" href="{base}/" aria-label="Share this book" title="Scan to share">
+      <img src="{base}/qr.svg" alt="QR code linking to this book" />
+    </a>
   </div>
 
   <div class="title-block">
@@ -139,5 +142,19 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+
+  .qr {
+    display: inline-block;
+    line-height: 0;
+    opacity: 0.45;
+    transition: opacity 200ms ease, transform 200ms ease;
+    border-bottom: none;
+  }
+  .qr:hover { opacity: 1; transform: scale(1.05); }
+  .qr img {
+    width: 72px;
+    height: 72px;
+    display: block;
   }
 </style>
